@@ -31,10 +31,10 @@
 				v2f vert (appdata_base v)
 				{
 					v2f o;
-					o.pos = GetProjectionSpacePosition(v.vertex);
+					o.pos = GetHomogenousCoordinates(v.vertex);
 					o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
 
-					o.cap =GetMatCapCoord(v.normal);
+					o.cap =GetMatCapCoordinates(v.normal);
 					return o;
 				}
 				

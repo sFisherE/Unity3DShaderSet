@@ -23,7 +23,7 @@ SubShader {
 		v2f vert (appdata_base v)
 		{
 			v2f o;
-			o.pos =GetProjectionSpacePosition(v.vertex);
+			o.pos =GetHomogenousCoordinates(v.vertex);
 			o.uv = TRANSFORM_TEX (v.texcoord, _MainTex);
 			
 			float costheta = dot(GetEyeSpaceNormal(v.normal), fixed3(0,1,0));
